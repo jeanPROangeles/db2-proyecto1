@@ -22,8 +22,8 @@ FetchContent_MakeAvailable(googletest)
 include(GoogleTest)
 set($ENV{$CTEST_OUTPUT_ON_FAILURE} 1)
 
-include_directories(src libs)
-link_directories(src libs)
+include_directories(src)
+link_directories(src)
 
 
 enable_testing()
@@ -79,8 +79,4 @@ gtest_discover_tests(sequential)
 gtest_discover_tests(generalRecord)
 gtest_discover_tests(bucketPool)
 
-#----------------------------DEMO----------------------------------------------#
-add_executable(
-  program 
-  demo/main.cpp
-)
+file(COPY ../data DESTINATION)
